@@ -1,0 +1,45 @@
+@(title: String, loggedIn: Boolean)(content: Html)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        	<title>@title</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta name="description" content="play-java-securesocial">
+			<meta name="author" content="http://github.com/janih">
+			<link rel="stylesheet" media="screen" href="@routes.Assets.at("lib/bootstrap/css/bootstrap.min.css")" />
+			<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")" />
+			<link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+			
+			<script data-main="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript" src="@routes.Assets.at("lib/bootstrap/js/bootstrap.min.js")"></script>
+			<script data-main="@routes.Assets.at("javascripts/jquery.min.js")" type="text/javascript" src="@routes.Assets.at("lib/jquery/jquery.min.js")"></script>
+    </head>
+    <body>
+    
+		<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					</button>
+					@if(!loggedIn) {
+						<a class="navbar-brand" href="/start">Login</a>
+					} else {
+						<a class="navbar-brand" href="/logout">Logout</a>
+					}
+				</div>
+				<div class="collapse navbar-collapse">
+				</div>
+			</div>
+		</div>    
+	    
+    	<div class="container">
+	        @content
+			<hr>
+			<footer>
+			<p>play-java-securesocial</p>
+			</footer>
+		</div>
+    </body>
+</html>
