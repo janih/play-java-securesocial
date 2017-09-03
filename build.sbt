@@ -10,7 +10,8 @@ scalaVersion := "2.11.1"
 
 libraryDependencies ++= Seq(
     javaCore,
-    "ws.securesocial" %% "securesocial" % "master-SNAPSHOT",
+    // "ws.securesocial" %% "securesocial" % "master-SNAPSHOT",
+    "ws.securesocial" % "securesocial_2.11" % "3.0-M3",
     "org.webjars" % "bootstrap" % "3.2.0"
 )
 
